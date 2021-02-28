@@ -1,16 +1,16 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const First = (props) => {
-  const numberRandom = Math.random() * (props.max - props.min) + props.min;
+const First = ({max, min}) => {
+  const numberRandom = Math.random() * (max - min) + min;
   console.warn(numberRandom);
 
   return (
     <>
       <View>
         <Text style={style.container}>
-          O número máximo é {props.max ?? 'Preencha o valor máximo:'} e o mínimo
-          é {props.min ?? 'Preencha o valor mínimo:'}
+          O número máximo é {max ?? 'Preencha o valor máximo:'} e o mínimo é{' '}
+          {min ?? 'Preencha o valor mínimo:'}
         </Text>
       </View>
     </>
